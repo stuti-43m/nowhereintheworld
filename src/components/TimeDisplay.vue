@@ -70,7 +70,7 @@ export default {
     fetchTime() {
       this.intervalId = setInterval(() => {
         this.updateTime()
-      },10000)
+      },60000)
     }
   },
   created() {

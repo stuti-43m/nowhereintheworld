@@ -281,7 +281,7 @@ export default {
         },
         generateTerrain() {
             //let colour = pick a random colour
-            vcount = Math.floor(Math.random()*6000+2000)
+            vcount = Math.floor(Math.random()*5000+2000)
             planeGeom = new Three.PlaneGeometry( container.clientWidth,container.clientHeight/40,vcount,500);
             let planeMaterial = new Three.MeshPhongMaterial({
                 color:new Three.Color(`hsl(${mainColour}, ${(colourS)}%, ${colourL}%)`), 
@@ -378,7 +378,6 @@ export default {
         },
         animateText() {
             if(timeText) {
-                console.log('ANIMAT')
                 timeText.position.y = timeText.position.y+0.008*Math.sin(t*10)
             }
         },
