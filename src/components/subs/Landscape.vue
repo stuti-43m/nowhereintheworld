@@ -169,7 +169,7 @@ export default {
                     //gmtText.material.dispose();
                     theScene.remove( gmtOffText );
                 }
-                let yoff = 0.25;
+                let yoff = 0.05;
                 let timeTextGeom = new TextGeometry(textObj.time, {
                     font:font,
                     size:1,
@@ -219,9 +219,9 @@ export default {
             let fontloader = new FontLoader();
             await fontloader.load('/font/digital.json',function(result) {
                 font = result;
-                let mainTextGeon = new TextGeometry("NOWHERE IN THE WORLD BUT HERE", {
+                let mainTextGeon = new TextGeometry("NOWHERE IN THE WORLD", {
                     font:result,
-                    size:0.13,
+                    size:0.14,
                     height:0.02
                 })
                 mainText = new Three.Mesh(mainTextGeon,[
@@ -234,7 +234,7 @@ export default {
 
                 let mainTextGeomInv = new TextGeometry("NOWHERE IN THE WORLD", {
                     font:result,
-                    size:0.13,
+                    size:0.14,
                     height:0.02
                 })
                 let mainTextInv = new Three.Mesh(mainTextGeomInv,[
@@ -339,7 +339,7 @@ export default {
             let ball = new Three.SphereGeometry( 4, 32, 16 );
             let ballMaterial = new Three.MeshPhongMaterial({
                 color:     new Three.Color(`hsl(${compcolour}, 80%, 40%)`), 
-                specular:  new Three.Color(`hsl(${(compcolour+30)%360}, 100%, 40%)`),
+                specular:  new Three.Color(`hsl(${compcolour}, 100%, 40%)`),
                 shininess: 15,
                 side:      Three.DoubleSide,
                 smoothShading:true
@@ -378,7 +378,9 @@ export default {
         },
         animateText() {
             if(timeText) {
-                timeText.position.y = timeText.position.y+0.008*Math.sin(t*10)
+                timeText.position.y = timeText.position.y+0.008*Math.sin(t*70)
+                gmtText.position.y = gmtText.position.y+0.02*Math.sin(t*70)
+                gmtOffText.position.y = gmtOffText.position.y+0.038*Math.sin(t*70)
             }
         },
         render () {
