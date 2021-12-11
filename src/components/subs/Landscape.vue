@@ -379,7 +379,7 @@ export default {
         animateText() {
             if(timeText) {
                 console.log('ANIMAT')
-                timeText.position.y = timeText.position.y+0.8*Math.sin(t*10)
+                timeText.position.y = timeText.position.y+0.08*Math.sin(t*10)
             }
         },
         render () {
