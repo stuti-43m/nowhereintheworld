@@ -172,7 +172,7 @@ export default {
                 let yoff = 0.05;
                 let timeTextGeom = new TextGeometry(textObj.time, {
                     font:font,
-                    size:1,
+                    size:0.9,
                     height:0.02
                 })
 
@@ -181,10 +181,13 @@ export default {
                 ])
                 timeText.geometry.computeBoundingBox ();
                 console.log('BOUNDING BOX',timeText.geometry.boundingBox);
-                let xoff = timeText.geometry.boundingBox.max.x
+                
                 timeText.position.x = -1.3;
                 timeText.position.y = -0.1+yoff;
                 timeText.position.z = 40;
+                let yboff = timeText.geometry.boundingBox.min.y
+                let xboff = timeText.geometry.boundingBox.min.x
+                console.log(timeText.geometry.boundingBox)
                 //timeText.layers.enable(1);
                 theScene.add(timeText);
                 let gmtGeom = new TextGeometry("GMT", {
@@ -195,21 +198,27 @@ export default {
                 gmtText = new Three.Mesh(gmtGeom,[
                     new Three.MeshBasicMaterial({ color: "#ffffff" })
                 ])
-                gmtText.position.x = xoff-1.2;
-                gmtText.position.y = 0.69+yoff;
+                //gmtText.position.x = xoff-1.2;
+                //gmtText.position.y = 0.69+yoff;
+                //gmtText.position.z = 40;
+                gmtText.position.x = xboff-1.3;
+                gmtText.position.y = yboff-0.4;
                 gmtText.position.z = 40;
                 theScene.add(gmtText);
 
                 let gmtOffGeom = new TextGeometry(textObj.offest, {
                     font:font,
-                    size:0.12,
+                    size:0.17,
                     height:0.02
                 })
                 gmtOffText = new Three.Mesh(gmtOffGeom,[
                     new Three.MeshBasicMaterial({ color: "#ffffff" })
                 ])
-                gmtOffText.position.x = xoff-0.8;
-                gmtOffText.position.y = 0.74+yoff;
+                //gmtOffText.position.x = xoff-0.8;
+                //gmtOffText.position.y = 0.74+yoff;
+                //gmtOffText.position.z = 40;
+                gmtOffText.position.x = gmtText.position.x + 0.4
+                gmtOffText.position.y = yboff-0.4;
                 gmtOffText.position.z = 40;
                 theScene.add(gmtOffText)
             }
@@ -227,8 +236,8 @@ export default {
                 mainText = new Three.Mesh(mainTextGeon,[
                     new Three.MeshBasicMaterial({ color: "#ffffff" })
                 ])
-                mainText.position.x = -1;
-                mainText.position.y = 3;
+                mainText.position.x = -1+0.1;
+                mainText.position.y = 2.8;
                 mainText.position.z = 40;
                 theScene.add(mainText);
 
@@ -240,7 +249,7 @@ export default {
                 let mainTextInv = new Three.Mesh(mainTextGeomInv,[
                     new Three.MeshBasicMaterial({ color: "#ffffff" })
                 ])
-                mainTextInv.position.x = 1.;
+                mainTextInv.position.x = 1+0.1;
                 mainTextInv.position.y = -2.5;
                 mainTextInv.position.z = 40;
                 mainTextInv.rotation.z = -Math.PI;
