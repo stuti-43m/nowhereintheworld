@@ -5,7 +5,6 @@
 
 - Concept 
 Time zones are weird. We’ve got GMT, GMT+2, GMT+3—clean, standardized. In an ideal world, we’d have 24 of them.
-
 But why stop at whole numbers? We could have had GMT+1.5, GMT+2.75—heck, even GMT+π. Technically, there are 360 possible time zones (infinite, but let’s not go there). Back in the sundial days, people actually hyper local timezones. Sure some countries decided to be rebels and claimed GMT+5:30, GMT+9:45 etc, leaving us with 48 time zones. But that still means 360 - 48 = 312 unclaimed time zones! 
 And I say it's time to honor these forgotten, orphaned time zones—by including them on a clock where, officially, nowhere in the world would it be ticking that time at that moment but in this clock.
 
